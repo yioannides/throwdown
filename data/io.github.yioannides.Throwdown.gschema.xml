@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="throwdown">
-	<schema id="io.github.yioannides.Throwdown" path="/io/github/yioannides/Throwdown/">
-	</schema>
+<schemalist>
+  <schema
+      id="io.github.yioannides.Throwdown"
+      path="/io/github/yioannides/Throwdown/">
+
+    <key name="enable-360-spins" type="b">
+      <default>true</default>
+      <summary>Enable 360 Spins</summary>
+      <description>
+        Allow 360-degree spins when generating tricks.
+      </description>
+    </key>
+
+  </schema>
 </schemalist>

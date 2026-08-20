@@ -2,12 +2,12 @@ import json
 from pathlib import Path
 from random import choice
 
+from gi.repository import Gio
+
 _TRICKS_PATH = Path(__file__).parent / "tricks.json"
 
 with _TRICKS_PATH.open(encoding="utf-8") as _file:
     _tricks = json.load(_file)
-
-_aliases = _tricks["aliases"]
 
 stance = _tricks["stance"]
 direction = _tricks["direction"]
@@ -18,8 +18,17 @@ lowpop = _tricks["lowpop"]
 pressure = _tricks["pressure"]
 grind = _tricks["grind"]
 flat = _tricks["flat"]
+_aliases = _tricks["aliases"]
 
 def _combo_pools():
+
+    settings = Gio.Settings.new("io.github.yioannides.Throwdown")
+
+    if settings.get_boolean("enable-360-spins"):
+        spin = _tricks["spin"]
+    else:
+        spin = _tricks["spin"][:1]
+
     easy = [
         [stance, midpop],
         [stance, highpop],

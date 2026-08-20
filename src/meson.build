@@ -4,6 +4,7 @@ gnome = import('gnome')
 
 blueprints = custom_target('blueprints',
   input: files(
+    'gtk/preferences.blp',
     'gtk/shortcuts-dialog.blp',
     'gtk/window.blp',
   ),
@@ -39,6 +40,7 @@ configure_file(
 throwdown_sources = [
   '__init__.py',
   'main.py',
+  'preferences.py',
   'randomizer.py',
   'window.py',
 ]

@@ -27,6 +27,7 @@ gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw
 from .window import ThrowdownWindow
+from .preferences import PreferencesDialog
 
 
 class ThrowdownApplication(Adw.Application):
@@ -58,7 +59,8 @@ class ThrowdownApplication(Adw.Application):
 
     def on_preferences_action(self, widget, _):
         """Callback for the app.preferences action."""
-        print('app.preferences action activated')
+        dialog = PreferencesDialog()
+        dialog.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):
         action = Gio.SimpleAction.new(name, None)
