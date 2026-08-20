@@ -29,14 +29,22 @@ jobs:
             runner: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout repository
+        uses: actions/checkout@v5
 
-      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+      - name: Build Flatpak
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: throwdown-${{ matrix.arch }}.flatpak
           manifest-path: io.github.yioannides.Throwdown.json
           cache-key: flatpak-builder-${{ matrix.arch }}-${{ github.sha }}
           arch: ${{ matrix.arch }}
+
+      - name: Upload Flatpak
+        uses: actions/upload-artifact@v4
+        with:
+          name: throwdown-${{ matrix.arch }}
+          path: throwdown-${{ matrix.arch }}.flatpak
 
   release:
     name: Create new release
@@ -49,28 +57,54 @@ jobs:
     steps:
       - name: Get next version
         id: version
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          RELEASE_TYPE: ${{ inputs.release_type }}
         run: |
-          current=$(gh release list --limit 1 --json tagName --jq '.[0].tagName')
+          current=$(gh release list \
+            --repo "$GITHUB_REPOSITORY" \
+            --limit 1 \
+            --json tagName \
+            --jq '.[0].tagName')
 
           echo "Current version: $current"
 
-          version=${current#v}
+          # If there are no existing releases, start at v1.0.0.
+          if [ -z "$current" ]; then
+            next="v1.0.0"
+          else
+            version=${current#v}
 
-          IFS='.' read -r major minor patch <<< "$version"
-          patch=${patch:-0}
+            IFS='.' read -r major minor patch <<< "$version"
 
-          if [ "${{ inputs.release_type }}" = "Major release" ]; then
-            next="v$((major + 1)).0"
-          elif [ "${{ inputs.release_type }}" = "Point release" ]; then
-            next="v${major}.$((minor + 1))"
-          elif [ "${{ inputs.release_type }}" = "Bug fix release" ]; then
-            next="v${major}.${minor}.$((patch + 1))"
+            major=${major:-0}
+            minor=${minor:-0}
+            patch=${patch:-0}
+
+            case "$RELEASE_TYPE" in
+              "Major release")
+                next="v$((major + 1)).0.0"
+                ;;
+
+              "Point release")
+                next="v${major}.$((minor + 1)).0"
+                ;;
+
+              "Bug fix release")
+                next="v${major}.${minor}.$((patch + 1))"
+                ;;
+
+              *)
+                echo "Unknown release type: $RELEASE_TYPE"
+                exit 1
+                ;;
+            esac
           fi
 
           echo "Next version: $next"
           echo "tag=$next" >> "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ github.token }}
 
       - name: Download Flatpak artifacts
         uses: actions/download-artifact@v5
@@ -78,12 +112,19 @@ jobs:
           path: artifacts
 
       - name: Prepare release files
+        shell: bash
         run: |
           mkdir -p release-files
-          find artifacts -type f -name "*.flatpak" -exec cp {} release-files/ \;
+
+          find artifacts \
+            -type f \
+            -name "*.flatpak" \
+            -exec cp {} release-files/ \;
+
+          echo "Release files:"
           ls -lh release-files/
 
-      - name: Create new release
+      - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
