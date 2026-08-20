@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 13:20+0300\n"
-"PO-Revision-Date: 2026-08-12 13:34+0300\n"
+"POT-Creation-Date: 2026-08-20 21:44+0300\n"
+"PO-Revision-Date: 2026-08-20 21:51+0300\n"
 "Last-Translator: yiannis ioannides <git@yioannides.com>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
 "Language: el\n"
@@ -19,20 +19,29 @@ msgstr ""
 "X-Generator: Gtranslator 50.0\n"
 
 #: data/io.github.yioannides.Throwdown.desktop.in:2
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:7 src/gtk/window.ui:10
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:8 src/gtk/window.blp:5
 msgid "Throwdown"
 msgstr "Throwdown"
 
-#. Don't translate the semicolons!
+#. TRANSLATORS: do NOT translate or localize the semicolons!
 #: data/io.github.yioannides.Throwdown.desktop.in:9
 msgid "skateboard;skate;trick;challenge;"
 msgstr "σκέϊτμπορντ;σκέϊτ;κόλπο;πρόκληση;"
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:8
+#: data/io.github.yioannides.Throwdown.gschema.xml:9 src/gtk/preferences.blp:11
+msgid "Enable 360 Spins"
+msgstr "Περιφορά 360 μοιρών"
+
+#: data/io.github.yioannides.Throwdown.gschema.xml:10
+#: src/gtk/preferences.blp:12
+msgid "Allow 360-degree spins when generating tricks"
+msgstr "Να επιτρέπεται η περιφόρα 360 μοιρών στην παραγωγή κόλπων"
+
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:9
 msgid "Improve your skateboarding skills!"
 msgstr "Βελτίωσε τις ικανότητες σου στο σκέϊτμπορντινγκ!"
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:10
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:11
 msgid ""
 "Throwdown is a minimal GNOME app for generating random skateboarding trick "
 "sequences! Features include:"
@@ -40,12 +49,12 @@ msgstr ""
 "Το Throwdown είναι μια εφαρμογή για το GNOME για να παράγεις τυχαίες "
 "ακολουθείες κόλπων του σκέϊτμπορντ! Κάποια χαρακτηριστικά:"
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:12
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:13
 msgid "Three levels of difficulty (easy, medium, hard) and random mode"
 msgstr "Τρία επίπεδα δυσκολίας (εύκολο, μέτριο, δύσκολο) και τυχαίο"
 
 #. Translate as much as your language allows you to, but using the original words is not a problem either
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:14
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:15
 msgid ""
 "Type of modules: stance, direction, spin, flip, grind, late flip and ground "
 "tricks"
@@ -53,72 +62,102 @@ msgstr ""
 "Τύποι δομοστοιχείων: στάση, πορεία, περιστροφή, flip, grind, late flip και "
 "κόλπα εδάφους"
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:15
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:16
 msgid "Named tricks (example: Fakie BS 360 -> Full Cab)"
 msgstr "Επώνυμα κόλπα (παράδειγμα: Fakie BS 360 -> Full Cab)"
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:45
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:42
 msgid "Main window"
 msgstr "Κυρίως παράθυρο"
 
-#: src/gtk/window.ui:20
-msgid "Difficulty"
-msgstr "Δυσκολία"
+#: src/main.py:55
+msgid "translator-credits"
+msgstr "yiannis ioannides <git@yioannides.com>"
 
-#: src/gtk/window.ui:28
-msgid "Main Menu"
-msgstr "Κυρίως μενού"
-
-#: src/gtk/window.ui:41
-msgid "Welcome"
-msgstr "Καλωσόρισμα"
-
-#. To be translated informally (but politely, like "What's up?")
-#: src/gtk/window.ui:71
-msgid "Hey! What's good?"
-msgstr "Γειά! Πώς πάει;"
-
-#: src/gtk/window.ui:82
-msgid "Choose your difficulty to get started!"
-msgstr "Επέλεξε το επίπεδο δυσκολίας και ξεκίνα!"
-
-#: src/gtk/window.ui:97
-msgid "Trick"
-msgstr "Κόλπο"
-
-#. For context: the full string is "Press <space> for a new trick!"
-#: src/gtk/window.ui:153
-msgid "Press"
-msgstr "Πάτα"
-
-#. For context: the full string is "Press <space> for a new trick!"
-#: src/gtk/window.ui:164
-msgid "for a new trick!"
-msgstr "για καινούργιο κόλπο!"
-
-#: src/gtk/window.ui:180 src/window.py:59
+#: src/window.py:59 src/gtk/window.blp:165
 msgid "Easy"
 msgstr "Εύκολο"
 
-#: src/gtk/window.ui:184 src/window.py:60
+#: src/window.py:60 src/gtk/window.blp:170
 msgid "Medium"
 msgstr "Μέτριο"
 
-#: src/gtk/window.ui:188 src/window.py:61
+#: src/window.py:61 src/gtk/window.blp:175
 msgid "Hard"
 msgstr "Δύσκολο"
 
-#: src/gtk/window.ui:193 src/window.py:62
+#: src/window.py:62 src/gtk/window.blp:181
 msgid "Random"
 msgstr "Τυχαίο"
 
-#: src/gtk/window.ui:201
+#: src/gtk/preferences.blp:8
+msgid "Behavior"
+msgstr "Συμπεριφορά"
+
+#: src/gtk/shortcuts-dialog.blp:6
+msgid "Shortcuts"
+msgstr "Συντομεύσεις"
+
+#: src/gtk/shortcuts-dialog.blp:9
+msgctxt "shortcut window"
+msgid "Next trick"
+msgstr "Επόμενο κόλπο"
+
+#: src/gtk/shortcuts-dialog.blp:14
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Εμφάνιση προτιμήσεων"
+
+#: src/gtk/shortcuts-dialog.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Εμφάνιση συντομεύσεων πληκτρολογίου"
+
+#: src/gtk/shortcuts-dialog.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Κλείσιμο"
+
+#: src/gtk/window.blp:15
+msgid "Difficulty"
+msgstr "Δυσκολία"
+
+#: src/gtk/window.blp:23
+msgid "Main Menu"
+msgstr "Κυρίως μενού"
+
+#: src/gtk/window.blp:34
+msgid "Welcome Screen"
+msgstr "Καλωσόρισμα"
+
+#: src/gtk/window.blp:67
+msgid "Hey! What's good?"
+msgstr "Γειά! Πώς πάει;"
+
+#: src/gtk/window.blp:78
+msgid "Choose your difficulty to get started!"
+msgstr "Επέλεξε το επίπεδο δυσκολίας και ξεκίνα!"
+
+#: src/gtk/window.blp:89
+msgid "Trick"
+msgstr "Κόλπο"
+
+#: src/gtk/window.blp:145
+msgid "Press"
+msgstr "Πάτα"
+
+#: src/gtk/window.blp:154
+msgid "for a new trick!"
+msgstr "για καινούργιο κόλπο!"
+
+#: src/gtk/window.blp:190
+msgid "_Preferences"
+msgstr "Προτιμήσεις"
+
+#: src/gtk/window.blp:195
+msgid "_Keyboard Shortcuts"
+msgstr "Συντομεύσεις πληκτρολογίου"
+
+#: src/gtk/window.blp:200
 msgid "About Throwdown"
 msgstr "Περί του Throwdown"
-
-#. Add your name like this:
-#.
-#. Artur Klevans <translation@arturklevans.com>
-#: src/main.py:53
-msgid "translator-credits"
-msgstr "yiannis ioannides <git@yioannides.com>"

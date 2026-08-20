@@ -3,7 +3,9 @@
 data/io.github.yioannides.Throwdown.desktop.in
 data/io.github.yioannides.Throwdown.gschema.xml
 data/io.github.yioannides.Throwdown.metainfo.xml.in
-src/gtk/window.ui
+src/gtk/preferences.blp
+src/gtk/shortcuts-dialog.blp
+src/gtk/window.blp
 src/main.py
 src/randomizer.py
 src/window.py
