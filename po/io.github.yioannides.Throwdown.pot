@@ -1,119 +1,158 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the io.github.yioannides.Throwdown package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: io.github.yioannides.Throwdown\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 13:20+0300\n"
+"POT-Creation-Date: 2026-08-20 21:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.yioannides.Throwdown.desktop.in:2
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:7 src/gtk/window.ui:10
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:8 src/gtk/window.blp:5
 msgid "Throwdown"
 msgstr ""
 
-#. Don't translate the semicolons!
+#. TRANSLATORS: do NOT translate or localize the semicolons!
 #: data/io.github.yioannides.Throwdown.desktop.in:9
 msgid "skateboard;skate;trick;challenge;"
 msgstr ""
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:8
+#: data/io.github.yioannides.Throwdown.gschema.xml:9 src/gtk/preferences.blp:11
+msgid "Enable 360 Spins"
+msgstr ""
+
+#: data/io.github.yioannides.Throwdown.gschema.xml:10
+#: src/gtk/preferences.blp:12
+msgid "Allow 360-degree spins when generating tricks"
+msgstr ""
+
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:9
 msgid "Improve your skateboarding skills!"
 msgstr ""
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:10
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:11
 msgid ""
 "Throwdown is a minimal GNOME app for generating random skateboarding trick "
 "sequences! Features include:"
 msgstr ""
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:12
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:13
 msgid "Three levels of difficulty (easy, medium, hard) and random mode"
 msgstr ""
 
 #. Translate as much as your language allows you to, but using the original words is not a problem either
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:14
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:15
 msgid ""
 "Type of modules: stance, direction, spin, flip, grind, late flip and ground "
 "tricks"
 msgstr ""
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:15
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:16
 msgid "Named tricks (example: Fakie BS 360 -> Full Cab)"
 msgstr ""
 
-#: data/io.github.yioannides.Throwdown.metainfo.xml.in:45
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:42
 msgid "Main window"
 msgstr ""
 
-#: src/gtk/window.ui:20
-msgid "Difficulty"
+#: src/main.py:55
+msgid "translator-credits"
 msgstr ""
 
-#: src/gtk/window.ui:28
-msgid "Main Menu"
-msgstr ""
-
-#: src/gtk/window.ui:41
-msgid "Welcome"
-msgstr ""
-
-#. To be translated informally (but politely, like "What's up?")
-#: src/gtk/window.ui:71
-msgid "Hey! What's good?"
-msgstr ""
-
-#: src/gtk/window.ui:82
-msgid "Choose your difficulty to get started!"
-msgstr ""
-
-#: src/gtk/window.ui:97
-msgid "Trick"
-msgstr ""
-
-#. For context: the full string is "Press <space> for a new trick!"
-#: src/gtk/window.ui:153
-msgid "Press"
-msgstr ""
-
-#. For context: the full string is "Press <space> for a new trick!"
-#: src/gtk/window.ui:164
-msgid "for a new trick!"
-msgstr ""
-
-#: src/gtk/window.ui:180 src/window.py:59
+#: src/window.py:59 src/gtk/window.blp:165
 msgid "Easy"
 msgstr ""
 
-#: src/gtk/window.ui:184 src/window.py:60
+#: src/window.py:60 src/gtk/window.blp:170
 msgid "Medium"
 msgstr ""
 
-#: src/gtk/window.ui:188 src/window.py:61
+#: src/window.py:61 src/gtk/window.blp:175
 msgid "Hard"
 msgstr ""
 
-#: src/gtk/window.ui:193 src/window.py:62
+#: src/window.py:62 src/gtk/window.blp:181
 msgid "Random"
 msgstr ""
 
-#: src/gtk/window.ui:201
-msgid "About Throwdown"
+#: src/gtk/preferences.blp:8
+msgid "Behavior"
 msgstr ""
 
-#. Add your name like this:
-#.
-#. Artur Klevans <translation@arturklevans.com>
-#: src/main.py:53
-msgid "translator-credits"
+#: src/gtk/shortcuts-dialog.blp:6
+msgid "Shortcuts"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:9
+msgctxt "shortcut window"
+msgid "Next trick"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:14
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: src/gtk/window.blp:15
+msgid "Difficulty"
+msgstr ""
+
+#: src/gtk/window.blp:23
+msgid "Main Menu"
+msgstr ""
+
+#: src/gtk/window.blp:34
+msgid "Welcome Screen"
+msgstr ""
+
+#: src/gtk/window.blp:67
+msgid "Hey! What's good?"
+msgstr ""
+
+#: src/gtk/window.blp:78
+msgid "Choose your difficulty to get started!"
+msgstr ""
+
+#: src/gtk/window.blp:89
+msgid "Trick"
+msgstr ""
+
+#: src/gtk/window.blp:145
+msgid "Press"
+msgstr ""
+
+#: src/gtk/window.blp:154
+msgid "for a new trick!"
+msgstr ""
+
+#: src/gtk/window.blp:190
+msgid "_Preferences"
+msgstr ""
+
+#: src/gtk/window.blp:195
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/gtk/window.blp:200
+msgid "About Throwdown"
 msgstr ""
