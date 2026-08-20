@@ -27,10 +27,22 @@
 
     "modules": [
         {
-            "name": "throwdown",
-            "builddir": true,
+            "name": "blueprint-compiler",
             "buildsystem": "meson",
-
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/blueprint-compiler",
+                    "tag": "v0.22.0",
+                    "commit": "f36b06194eae2f38bfe7100cfb0395393f4b9a53"
+                }
+            ]
+        },
+        {
+            "name": "throwdown",
+            "buildsystem": "meson",
+            "builddir": true,
             "sources": [
                 {
                     "type": "git",
@@ -38,7 +50,6 @@
                     "branch": "main"
                 }
             ],
-
             "config-opts": [
                 "--libdir=lib"
             ]
