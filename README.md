@@ -18,8 +18,8 @@ Simply paste this command onto your terminal:
 
 ```sh
 wget -q https://github.com/yioannides/throwdown/releases/latest/download/throwdown-x86_64.flatpak &&
-flatpak install --user -y ./throwdown-x86_64.flatpak
-
+flatpak install --user -y ./throwdown-x86_64.flatpak &&
+rm throwdown-x86_64.flatpak
 ```
 
 ### introduction:
