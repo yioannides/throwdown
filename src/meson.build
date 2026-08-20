@@ -4,6 +4,7 @@ gnome = import('gnome')
 
 blueprints = custom_target('blueprints',
   input: files(
+    'gtk/shortcuts-dialog.blp',
     'gtk/window.blp',
   ),
   output: '.',
