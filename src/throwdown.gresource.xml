@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/yioannides/Throwdown">
+    <file alias="preferences.ui" preprocess="xml-stripblanks">gtk/preferences.ui</file>
     <file alias="shortcuts-dialog.ui" preprocess="xml-stripblanks">gtk/shortcuts-dialog.ui</file>
     <file alias="window.ui" preprocess="xml-stripblanks">gtk/window.ui</file>
   </gresource>
