@@ -42,6 +42,7 @@ class ThrowdownWindow(Adw.ApplicationWindow):
         self._add_action("easy", lambda *_: self.set_difficulty("easy"))
         self._add_action("medium", lambda *_: self.set_difficulty("medium"))
         self._add_action("hard", lambda *_: self.set_difficulty("hard"))
+        self._add_action("pro", lambda *_: self.set_difficulty("pro"))
         self._add_action("random", lambda *_: self.set_difficulty("random"))
         self._add_action("next-trick", lambda *_: self.next_trick())
 
@@ -59,6 +60,7 @@ class ThrowdownWindow(Adw.ApplicationWindow):
             "easy": _("Easy"),
             "medium": _("Medium"),
             "hard": _("Hard"),
+            "pro": _("Pro"),
             "random": _("Random"),
         }
 

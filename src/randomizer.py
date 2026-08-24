@@ -34,57 +34,73 @@ def _combo_pools():
         [stance, highpop],
         [stance, "to", grind],
         [stance, direction, spin],
-        [stance, direction, highpop],
+        [stance, direction, spin, highpop],
         [stance, highpop, "Late", direction, spin],
     ]
 
     medium = [
         [stance, lowpop],
         [stance, pressure],
-        [stance, direction, midpop],
-        [stance, direction, pressure],
         [stance, highpop, "to", flat],
+        [stance, highpop, "to", grind],
         [grind, "to", direction, spin],
+        [stance, direction, spin, midpop],
         [stance, direction, spin, highpop],
+        [stance, direction, spin, pressure],
         [stance, direction, spin, "to", flat],
         [stance, direction, spin, "to", grind],
-        [stance, direction, highpop, "to", grind],
         [stance, midpop, "Late", direction, spin],
+        [stance, "to", grind, "to", direction, spin],
+        [stance, direction, spin, highpop, "to", grind],
     ]
 
     hard = [
-        [grind, "to", highpop],
-        [stance, direction, lowpop],
-        [stance, direction, midpop],
+        [stance, midpop, "to", flat],
+        [stance, lowpop, "to", flat],
+        [stance, midpop, "to", grind],
+        [stance, lowpop, "to", grind],
+        [stance, pressure, "to", flat],
+        [stance, direction, spin, lowpop],
+        [stance, direction, spin, midpop],
         [stance, direction, spin, highpop],
         [stance, direction, spin, pressure],
+        [stance, "to", grind, "to", highpop],
         [stance, direction, spin, "to", grind],
-        [stance, direction, lowpop, "to", grind],
-        [stance, direction, midpop, "to", grind],
         [stance, lowpop, "Late", direction, spin],
+        [stance, lowpop, "to", grind, "to", midpop],
+        [stance, lowpop, "to", grind, "to", midpop],
         [stance, pressure, "Late", direction, spin],
+        [stance, midpop, "to", grind, "to", highpop],
+        [stance, lowpop, "to", grind, "to", highpop],
+        [stance, direction, spin, lowpop, "to", grind],
+        [stance, direction, spin, midpop, "to", grind],
         [stance, direction, spin, highpop, "to", grind],
-        [stance, direction, midpop, "to", flat, "to", midpop],
-        [stance, direction, lowpop, "to", flat, "to", highpop],
-        [stance, direction, highpop, "to", flat, "to", highpop],
-        [stance, direction, midpop, "to", grind, "to", highpop],
+    ]
+
+    pro = [
         [stance, direction, spin, midpop, "to", flat, "to", midpop],
+        [stance, direction, spin, lowpop, "to", flat, "to", midpop],
+        [stance, direction, spin, lowpop, "to", flat, "to", highpop],
         [stance, direction, spin, midpop, "to", flat, "to", highpop],
-        [stance, direction, midpop, "to", flat, "to", direction, spin],
+        [stance, direction, spin, highpop, "to", flat, "to", highpop],
+        [stance, direction, spin, midpop, "to", grind, "to", highpop],
         [stance, direction, spin, highpop, "to", grind, "to", highpop],
-        [stance, direction, highpop, "to", flat, "to", direction, spin],
-        [stance, direction, midpop, "to", grind, "to", direction, spin],
-        [stance, direction, midpop, "to", grind, "to", direction, highpop],
-        [stance, direction, highpop, "to", flat, "to", direction, highpop],
-        [stance, direction, highpop, "to", grind, "to", direction, highpop],
+        [stance, direction, spin, midpop, "to", flat, "to", direction, spin],
+        [stance, direction, spin, highpop, "to", flat, "to", direction, spin],
+        [stance, direction, spin, midpop, "to", grind, "to", direction, spin],
         [stance, direction, spin, midpop, "to", flat, "to", direction, midpop],
-        [stance, direction, spin, midpop, "to", flat, "to", direction, highpop],
+        [stance, direction, spin, midpop, "to", flat, "to", direction, spin, highpop],
+        [stance, direction, spin, lowpop, "to", grind, "to", direction, spin, midpop],
+        [stance, direction, spin, midpop, "to", grind, "to", direction, spin, highpop],
+        [stance, direction, spin, highpop, "to", flat, "to", direction, spin, highpop],
+        [stance, direction, spin, highpop, "to", grind, "to", direction, spin, highpop],
     ]
 
     return {
         "easy": easy,
         "medium": medium,
         "hard": hard,
+        "pro": pro,
     }
 
 def _resolve_combo(combo):
@@ -97,7 +113,7 @@ def _resolve_combo(combo):
         else:
             resolved.append(item)
 
-    if not any("Casper" in item for item in resolved) or "Primo" in resolved:
+    if not any("Casper" in str(item) or "Primo" in str(item) for item in resolved):
         for i, item in enumerate(combo):
             if item is highpop:
                 resolved[i] = choice(highpop)
