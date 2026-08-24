@@ -1,14 +1,14 @@
 {
 	"stance": [
 		"",
-		"Nollie",
-		"Switch",
-		"Fakie"
+		"nollie",
+		"switch",
+		"fakie"
 	],
 
 	"direction": [
-		"Frontside",
-		"Backside"
+		"frontside",
+		"backside"
 	],
 
 	"spin": [
@@ -17,93 +17,97 @@
 	],
 
 	"highpop": [
-		"Kickflip",
-		"Heelflip",
-		"Body Varial",
-		"BS Pop Shove-it",
-		"FS Pop Shove-it",
-		"BS Pop Shove-it 360",
-		"FS Pop Shove-it 360"
+		"kickflip",
+		"heelflip",
+		"body varial",
+		"bs pop shove-it",
+		"fs pop shove-it",
+		"bs pop shove-it 360",
+		"fs pop shove-it 360"
 	],
 
 	"midpop": [
-		"Varial Flip",
-		"Varial Heel",
-		"Hardflip",
-		"Inward Heel",
-		"Impossible"
+		"varial flip",
+		"varial heel",
+		"hardflip",
+		"inward heel",
+		"impossible"
 	],
 
 	"lowpop": [
-		"360 Flip",
-		"Laserflip",
-		"Hardflip 360",
-		"Inward 360"
+		"360 flip",
+		"laser flip",
+		"hardflip 360",
+		"inward heelflip 360"
 	],
 
 	"pressure": [
-		"Pressure Flip",
-		"Pressure Heelflip",
-		"Pressure Hardflip",
-		"Pressure Inward Heelflip",
-		"Pressure 360 Flip",
-		"Pressure Hardflip 360"
+		"pressure flip",
+		"pressure heel",
+		"pressure hardflip",
+		"pressure inward heelflip",
+		"pressure 360 flip",
+		"pressure hardflip 360",
+		"pressure laser flip"
 	],
 
 	"grind": [
 		"50-50",
 		"5-0",
-		"Nosegrind",
-		"Smith",
-		"Feeble",
-		"Crooked",
-		"Overcrook",
-		"Suski",
-		"Salad",
-		"Willy",
-		"Overwilly",
-		"Boardslide",
-		"Lipside",
-		"Noseslide",
-		"Tailslide",
-		"Blunt",
-		"Noseblunt",
-		"Losi Grind"
+		"nosegrind",
+		"smith",
+		"feeble",
+		"crooked",
+		"overcrook",
+		"suski",
+		"salad",
+		"willy",
+		"overwilly",
+		"boardslide",
+		"lipside",
+		"noseslide",
+		"tailslide",
+		"blunt",
+		"noseblunt",
+		"losi grind"
 	],
 
 	"flat": [
-		"Manual",
-		"Nose Manual",
-		"Casper",
-		"Anti-Casper",
-		"Primo"
+		"manual",
+		"nose manual",
+		"casper",
+		"anti-casper",
+		"primo"
 	],
 
 	"aliases": {
-		"Fakie Backside 180": "Half Cab",
-		"Fakie Frontside 180": "FS Half Cab",
-		"Fakie Backside 360 Kickflip": "Caballerial",
-		"Fakie Frontside 360 Kickflip": "FS Caballerial",
-		"Fakie Backside 360": "Full Cab",
-		"Fakie Frontside 360": "FS Full Cab",
-		"Backside 180 Hardflip": "Modern Ghetto Bird",
-		"Frontside 180 Varial Flip": "Kickflip Body Varial",
-		"Backside 180 Varial Heel": "Heelflip Body Varial",
-		"Frontside 180 Varial Heel": "Big Heel",
-		"Backside 180 Varial Flip": "Big Flip",
-		"Frontside 180 FS Pop Shove-it 360": "FS Big Spin",
-		"Backside 180 BS Pop Shove-it 360": "BS Big Spin",
-		"Frontside 180 360 Flip": "Varial Flip Body Varial",
-		"Backside 180 Laserflip": "Varial Heel Body Varial",
-		"Frontside 180 Laserflip": "Bigger Heel",
-		"Backside 180 360 Flip": "Bigger Flip",
-		"Frontside 360 FS Pop Shove-it 360": "FS 360 Big Spin",
-		"Backside 360 BS Pop Shove-it 360": "BS 360 Big Spin",
-		"Nollie Hardflip Late Backside 180": "Ghetto Bird",
-		"Hardflip Late Backside 360": "Diamond Flip",
-		"Backside 180 FS Pop Shove-it": "BS Pop Shove-it Body Varial",
-		"Frontside 180 BS Pop Shove-it": "FS Pop Shove-it Body Varial",
-		"Backside 180 FS Pop Shove-it 360": "BS Anti Spin",
-		"Frontside 180 BS Pop Shove-it 360": "FS Anti Spin"
+		"fakie backside 180": "half cab",
+		"fakie frontside 180": "fs half cab",
+		"fakie backside 360 kickflip": "caballerial",
+		"fakie frontside 360 kickflip": "fs caballerial",
+		"fakie backside 360": "full cab",
+		"fakie frontside 360": "fs full cab",
+		"fakie frontside 180 laser flip": "fakie bigspin heelflip",
+		"inward heelflip 360 late frontside 180": "fs bigspin inward heelflip",
+		"inward heelflip 360 late backside 180": "bs bigspin inward heelflip",
+		"backside 180 hardflip": "modern ghetto bird",
+		"frontside 180 varial flip": "kickflip body varial",
+		"backside 180 varial heel": "disco flip",
+		"frontside 180 varial heel": "big heel",
+		"backside 180 varial flip": "big flip",
+		"frontside 180 fs pop shove-it 360": "fs bigspin",
+		"backside 180 bs pop shove-it 360": "bs bigspin",
+		"frontside 180 360 flip": "varial flip body varial",
+		"backside 180 laser flip": "varial heel body varial",
+		"frontside 180 laser flip": "bigger heel",
+		"backside 180 360 flip": "bigger flip",
+		"frontside 360 fs pop shove-it 360": "fs 360 bigspin",
+		"backside 360 bs pop shove-it 360": "bs 360 bigspin",
+		"nollie hardflip late backside 180": "ghetto bird",
+		"hardflip late backside 360": "diamond flip",
+		"backside 180 fs pop shove-it": "bs pop shove-it body varial",
+		"frontside 180 bs pop shove-it": "fs pop shove-it body varial",
+		"backside 180 fs pop shove-it 360": "bs anti spin",
+		"frontside 180 bs pop shove-it 360": "fs anti spin"
 	}
 }
