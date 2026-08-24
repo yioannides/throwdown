@@ -74,7 +74,9 @@ def _combo_pools():
         [stance, direction, spin, highpop, "to", grind, "to", highpop],
         [stance, direction, highpop, "to", flat, "to", direction, spin],
         [stance, direction, midpop, "to", grind, "to", direction, spin],
+        [stance, direction, midpop, "to", grind, "to", direction, highpop],
         [stance, direction, highpop, "to", flat, "to", direction, highpop],
+        [stance, direction, highpop, "to", grind, "to", direction, highpop],
         [stance, direction, spin, midpop, "to", flat, "to", direction, midpop],
         [stance, direction, spin, midpop, "to", flat, "to", direction, highpop],
     ]
@@ -95,10 +97,14 @@ def _resolve_combo(combo):
         else:
             resolved.append(item)
 
-    if any("Manual" in item for item in resolved):
+    if not any("Casper" in item for item in resolved) or "Primo" in resolved:
         for i, item in enumerate(combo):
             if item is highpop:
                 resolved[i] = choice(highpop)
+
+    if "Pop Shove-it" in resolved[-1]:
+        if grind in combo:
+            resolved[-1] = resolved[-1].replace("Pop ", "")
 
     return resolved
 
