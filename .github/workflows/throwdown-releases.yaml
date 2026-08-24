@@ -124,12 +124,13 @@ jobs:
           echo "Release files:"
           ls -lh release-files/
 
-      - name: Create GitHub release
+      - name: Create draft GitHub release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           name: ${{ steps.version.outputs.tag }}
           files: release-files/*.flatpak
           generate_release_notes: true
+          draft: true
           prerelease: false
           make_latest: true
