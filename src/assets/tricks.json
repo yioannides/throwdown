@@ -19,11 +19,11 @@
 	"highpop": [
 		"kickflip",
 		"heelflip",
-		"body varial",
 		"bs pop shove-it",
 		"fs pop shove-it",
 		"bs pop shove-it 360",
-		"fs pop shove-it 360"
+		"fs pop shove-it 360",
+		"body varial"
 	],
 
 	"midpop": [
@@ -37,8 +37,8 @@
 	"lowpop": [
 		"360 flip",
 		"laser flip",
-		"hardflip 360",
-		"inward heelflip 360"
+		"360 hardflip",
+		"360 inward heelflip"
 	],
 
 	"pressure": [
@@ -47,7 +47,7 @@
 		"pressure hardflip",
 		"pressure inward heelflip",
 		"pressure 360 flip",
-		"pressure hardflip 360",
+		"pressure 360 hardflip",
 		"pressure laser flip"
 	],
 
@@ -88,8 +88,8 @@
 		"fakie backside 360": "full cab",
 		"fakie frontside 360": "fs full cab",
 		"fakie frontside 180 laser flip": "fakie bigspin heelflip",
-		"inward heelflip 360 late frontside 180": "fs bigspin inward heelflip",
-		"inward heelflip 360 late backside 180": "bs bigspin inward heelflip",
+		"360 inward heelflip late frontside 180": "fs bigspin inward heelflip",
+		"360 inward heelflip late backside 180": "bs bigspin inward heelflip",
 		"backside 180 hardflip": "modern ghetto bird",
 		"frontside 180 varial flip": "kickflip body varial",
 		"backside 180 varial heel": "disco flip",
