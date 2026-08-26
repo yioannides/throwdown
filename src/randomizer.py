@@ -107,6 +107,7 @@ def _combo_pools():
 
 def _resolve_combo(combo):
     resolved = []
+
     for item in combo:
         if item is highpop:
             resolved.append(choice(highpop[:2]))
@@ -116,9 +117,13 @@ def _resolve_combo(combo):
             resolved.append(item)
 
     if not any("casper" in str(item) or "primo" in str(item) for item in resolved):
+        pool = highpop
+
+        if "late" in combo:
+            pool = pool[:-1]
         for i, item in enumerate(combo):
             if item is highpop:
-                resolved[i] = choice(highpop)
+                resolved[i] = choice(pool)
 
     if "pop shove-it" in resolved[-1]:
         if grind in combo:
@@ -136,7 +141,6 @@ def _format(trick_list):
 def _apply_aliases(combo):
     for original in sorted(_aliases, key=len, reverse=True):
         combo = combo.replace(original, _aliases[original])
-    combo = combo.replace("modern ghetto bird 360", "backside hardflip 360")
 
     return combo
 
