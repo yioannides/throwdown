@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="data/screenshots/throwdown-large.png" />
+  <img src="data/misc/png/throwdown-welcome-large.png" />
 </p>
 
 <p align="center">
-  <img src="data/screenshots/throwdown-ui.png" />
+  <img src="data/misc/screenshots/throwdown-ui.png" />
 </p>
 
 <h5 align="center">
