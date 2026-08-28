@@ -16,13 +16,16 @@
 		"360"
 	],
 
+	"flipside": [
+		"bs",
+		"fs"
+	],
+
 	"highpop": [
 		"kickflip",
 		"heelflip",
-		"bs pop shove-it",
-		"fs pop shove-it",
-		"bs pop shove-it 360",
-		"fs pop shove-it 360",
+		"pop shove-it",
+		"pop shove-it 360",
 		"body varial"
 	],
 
