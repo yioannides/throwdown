@@ -12,6 +12,7 @@ with _TRICKS_PATH.open(encoding="utf-8") as _file:
 stance = _tricks["stance"]
 direction = _tricks["direction"]
 spin = _tricks["spin"]
+flipside = _tricks["flipside"]
 highpop = _tricks["highpop"]
 midpop = _tricks["midpop"]
 lowpop = _tricks["lowpop"]
@@ -124,6 +125,10 @@ def _resolve_combo(combo):
         for i, item in enumerate(combo):
             if item is highpop:
                 resolved[i] = choice(pool)
+
+    for i, item in enumerate(resolved):
+        if "pop shove-it" in item:
+            resolved[i] = choice(flipside) + " " + item
 
     if "pop shove-it" in resolved[-1]:
         if grind in combo:
