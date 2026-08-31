@@ -41,11 +41,17 @@ sed -i 's/charset=CHARSET/charset=UTF-8/g' "$OUTPUT"
 grep -vE '^[[:space:]]*(#|$)' "$LINGUAS" |
 while read -r line; do
     for lang in $line; do
-        msgmerge \
-            --previous \
-            --backup=none \
-            --update \
-            "po/${lang}.po" \
-            "$OUTPUT"
+    		if [ ! -f po/${lang}.po ]; then
+            echo -ne "Requesting locale code for: \e[1m${lang}\e[0m > "
+            read -r REQ < /dev/tty
+            msginit -i "$OUTPUT" -o "po/${lang}.po" -l "${REQ}.utf8"
+    		else
+		    msgmerge \
+		        --previous \
+		        --backup=none \
+		        --update \
+		        "po/${lang}.po" \
+		        "$OUTPUT"
+		fi
     done
 done
