@@ -45,6 +45,8 @@ while read -r line; do
             echo -ne "Requesting locale code for: \e[1m${lang}\e[0m > "
             read -r REQ < /dev/tty
             msginit -i "$OUTPUT" -o "po/${lang}.po" -l "${REQ}.utf8"
+            mkdir -p "po/locale/$lang/LC_MESSAGES" && \
+			msgfmt "po/$lang.po" -o "po/locale/$lang/LC_MESSAGES/$PACKAGE_NAME.mo"
     		else
 		    msgmerge \
 		        --previous \
