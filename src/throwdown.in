@@ -27,7 +27,7 @@ import gettext
 
 VERSION = '@VERSION@'
 pkgdatadir = '@pkgdatadir@'
-localedir = '@localedir@'
+localedir = os.environ.get('PORTABLE_LOCALE', '@localedir@')
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
