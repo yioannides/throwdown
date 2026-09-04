@@ -32,6 +32,16 @@ Originally created as a standalone CLI app (drafted in bash / completed in Pytho
 - Type of modules: stance, direction, spin, flip, grind, lateflip & ground tricks
 - Named tricks (example: `Fakie BS 360` -> `Full Cab`)
 
+### translations:
+
+You can create a new translation file by running run the po-generator tool with the [ISO language code](https://www.w3schools.com/TAgs/ref_language_codes.asp) of your choice, for example Swedish:
+
+```sh
+git clone https://github.com/yioannides/throwdown.git
+cd throwdown/tools
+./gen-po.sh sv
+```
+
 ### resources (for absolute beginners):
 
 - Built using [GNOME Builder](https://flathub.org/en/apps/org.gnome.Builder)'s Python template
