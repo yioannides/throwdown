@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the io.github.yioannides.Throwdown package.
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: io.github.yioannides.Throwdown\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 21:45+0300\n"
+"POT-Creation-Date: 2026-09-04 11:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,8 +32,7 @@ msgid "Enable 360 Spins"
 msgstr ""
 
 #: data/io.github.yioannides.Throwdown.gschema.xml:10
-#: src/gtk/preferences.blp:12
-msgid "Allow 360-degree spins when generating tricks"
+msgid "Allow 360-degree spins when generating tricks."
 msgstr ""
 
 #: data/io.github.yioannides.Throwdown.metainfo.xml.in:9
@@ -69,24 +68,32 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:59 src/gtk/window.blp:165
+#: src/window.py:60 src/gtk/window.blp:165
 msgid "Easy"
 msgstr ""
 
-#: src/window.py:60 src/gtk/window.blp:170
+#: src/window.py:61 src/gtk/window.blp:170
 msgid "Medium"
 msgstr ""
 
-#: src/window.py:61 src/gtk/window.blp:175
+#: src/window.py:62 src/gtk/window.blp:175
 msgid "Hard"
 msgstr ""
 
-#: src/window.py:62 src/gtk/window.blp:181
+#: src/window.py:63 src/gtk/window.blp:180
+msgid "Pro"
+msgstr ""
+
+#: src/window.py:64 src/gtk/window.blp:186
 msgid "Random"
 msgstr ""
 
 #: src/gtk/preferences.blp:8
 msgid "Behavior"
+msgstr ""
+
+#: src/gtk/preferences.blp:12
+msgid "Allow 360-degree spins when generating tricks"
 msgstr ""
 
 #: src/gtk/shortcuts-dialog.blp:6
@@ -145,14 +152,14 @@ msgstr ""
 msgid "for a new trick!"
 msgstr ""
 
-#: src/gtk/window.blp:190
+#: src/gtk/window.blp:195
 msgid "_Preferences"
 msgstr ""
 
-#: src/gtk/window.blp:195
+#: src/gtk/window.blp:200
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/gtk/window.blp:200
+#: src/gtk/window.blp:205
 msgid "About Throwdown"
 msgstr ""
