@@ -50,7 +50,7 @@ class ThrowdownApplication(Adw.Application):
         about = Adw.AboutDialog(application_name='Throwdown',
                                 application_icon='io.github.yioannides.Throwdown',
                                 developer_name='yiannis ioannides',
-                                version='1.0',
+                                version='1.0.2',
                                 issue_url='https://gitlab.com/yioannides/throwdown/issues/',
                                 translator_credits=_('translator-credits'),
                                 developers=['yiannis ioannides'],
