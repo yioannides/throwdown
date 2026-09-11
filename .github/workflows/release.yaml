@@ -1,4 +1,4 @@
-name: throwdown-release
+name: release
 
 on:
   workflow_dispatch:
@@ -13,48 +13,48 @@ on:
           - Bug fix release
         default: Point release
 
+permissions:
+  actions: read
+  contents: write
+
 jobs:
-  flatpak:
-    name: "Flatpak ${{ matrix.arch }}"
-    runs-on: ${{ matrix.runner }}
-
-    container:
-      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-50
-      options: --privileged
-
-    strategy:
-      matrix:
-        include:
-          - arch: x86_64
-            runner: ubuntu-24.04
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Build Flatpak
-        uses: flatpak/flatpak-github-actions/flatpak-builder@v6
-        with:
-          bundle: throwdown-${{ matrix.arch }}.flatpak
-          manifest-path: io.github.yioannides.Throwdown.json
-          cache-key: flatpak-builder-${{ matrix.arch }}-${{ github.sha }}
-          arch: ${{ matrix.arch }}
-
-      - name: Upload Flatpak
-        uses: actions/upload-artifact@v4
-        with:
-          name: throwdown-${{ matrix.arch }}
-          path: throwdown-${{ matrix.arch }}.flatpak
-
   release:
     name: Create new release
-    needs: [flatpak]
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
+      - name: Find latest successful CI run
+        id: ci
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          run=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow flatpak-ci.yml \
+            --branch "${{ github.event.repository.default_branch }}" \
+            --status success \
+            --limit 1 \
+            --json databaseId,headSha,createdAt \
+            --jq '.[0]')
+
+          if [ -z "$run" ] || [ "$run" = "null" ]; then
+            echo "No successful Flatpak CI run found."
+            exit 1
+          fi
+
+          run_id=$(echo "$run" | jq -r '.databaseId')
+          sha=$(echo "$run" | jq -r '.headSha')
+          created_at=$(echo "$run" | jq -r '.createdAt')
+
+          echo "Using CI run: $run_id"
+          echo "Commit: $sha"
+          echo "Created: $created_at"
+
+          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
       - name: Get next version
         id: version
         shell: bash
@@ -73,7 +73,6 @@ jobs:
 
           echo "Current release: ${current:-none}"
 
-          # If there are no existing releases, start at v1.0.0.
           if [ -z "$current" ]; then
             next="v1.0.0"
           else
@@ -111,6 +110,8 @@ jobs:
       - name: Download Flatpak artifacts
         uses: actions/download-artifact@v5
         with:
+          run-id: ${{ steps.ci.outputs.run_id }}
+          github-token: ${{ github.token }}
           path: artifacts
 
       - name: Prepare release files
