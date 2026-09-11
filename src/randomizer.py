@@ -21,14 +21,20 @@ grind = _tricks["grind"]
 flat = _tricks["flat"]
 _aliases = _tricks["aliases"]
 
-def _combo_pools():
-
+def _preferences():
     settings = Gio.Settings.new("io.github.yioannides.Throwdown")
 
-    if settings.get_boolean("enable-360-spins"):
-        spin = _tricks["spin"]
-    else:
-        spin = _tricks["spin"][:1]
+    return {
+        "spin": (
+            _tricks["spin"]
+            if settings.get_boolean("enable-360-spins")
+            else _tricks["spin"][:1]
+        )
+    }
+
+def _combo_pools(preferences):
+
+    spin = preferences["spin"]
 
     easy = [
         [stance, midpop],
@@ -106,9 +112,9 @@ def _combo_pools():
         "pro": pro,
     }
 
-def _resolve_combo(combo):
+def _resolve_combo(combo, preferences):
     resolved = []
-
+    # init: convert items to tricks
     for item in combo:
         if item is highpop:
             resolved.append(choice(highpop[:2]))
@@ -116,20 +122,24 @@ def _resolve_combo(combo):
             resolved.append(choice(item))
         else:
             resolved.append(item)
-
+    # 01: if shuvits -> no flipped flat tricks / no body varial with late flips
     if not any("casper" in str(item) or "primo" in str(item) for item in resolved):
         pool = highpop
-
         if "late" in combo:
             pool = pool[:-1]
         for i, item in enumerate(combo):
             if item is highpop:
                 resolved[i] = choice(pool)
-
+    # 02: if spin -> no flipped flat tricks
+    if preferences["spin"] in combo:
+        for i, item in enumerate(combo):
+            if item is flat:
+                resolved[i] = choice(flat[:2])
+    # 03: direction for shuvits
     for i, item in enumerate(resolved):
         if "pop shove-it" in item:
-            resolved[i] = choice(flipside) + " " + item
-
+         resolved[i] = choice(flipside) + " " + item
+    # 04: no pop for shuv outs
     if "pop shove-it" in resolved[-1]:
         if grind in combo:
             resolved[-1] = resolved[-1].replace("pop ", "")
@@ -158,13 +168,14 @@ def _capitalize(combo):
     return capitalization
 
 def generate_trick(difficulty="random"):
-    pools = _combo_pools()
+    preferences = _preferences()
+    pools = _combo_pools(preferences)
 
     if difficulty == "random":
         difficulty = choice(list(pools))
 
     combo = choice(pools[difficulty])
-    combo = _resolve_combo(combo)
+    combo = _resolve_combo(combo, preferences)
     combo = _format(combo)
     combo = _apply_aliases(combo)
     combo = _capitalize(combo)
