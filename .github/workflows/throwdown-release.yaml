@@ -66,10 +66,12 @@ jobs:
           current=$(gh release list \
             --repo "$GITHUB_REPOSITORY" \
             --limit 1 \
+            --exclude-drafts \
+            --exclude-pre-releases \
             --json tagName \
             --jq '.[0].tagName')
 
-          echo "Current version: $current"
+          echo "Current release: ${current:-none}"
 
           # If there are no existing releases, start at v1.0.0.
           if [ -z "$current" ]; then
