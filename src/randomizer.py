@@ -154,10 +154,23 @@ def _format(trick_list):
     return output
 
 def _apply_aliases(combo):
-    for original in sorted(_aliases, key=len, reverse=True):
-        combo = combo.replace(original, _aliases[original])
+    result = combo
+    cabs = None
+    other = []
 
-    return combo
+    for original in sorted(_aliases, key=len, reverse=True):
+        replacement = _aliases[original]
+        if original in combo:
+            if "cab" in replacement:
+                cabs = replacement
+            else:
+                other.append(replacement)
+            result = result.replace(original, replacement)
+    if cabs and other:
+        result = f"{cabs} {' '.join(other)}"
+
+    return result
+
 
 def _capitalize(combo):
     items = combo.split(" to ")
