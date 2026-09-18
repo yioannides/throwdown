@@ -139,10 +139,6 @@ def _resolve_combo(combo, preferences):
     for i, item in enumerate(resolved):
         if "pop shove-it" in item:
          resolved[i] = choice(flipside) + " " + item
-    # 04: no pop for shuv outs
-    if "pop shove-it" in resolved[-1]:
-        if grind in combo:
-            resolved[-1] = resolved[-1].replace("pop ", "")
 
     return resolved
 
@@ -153,9 +149,13 @@ def _format(trick_list):
 
     return output
 
-def _apply_aliases(combo):
+def _apply_aliases(combo, resolved):
     for original in sorted(_aliases, key=len, reverse=True):
         combo = combo.replace(original, _aliases[original])
+    # 04: no pop for shuv outs
+    if "pop shove-it" in resolved[-1]:
+        if any(item in grind for item in resolved):
+            combo = combo.replace(resolved[-1], resolved[-1].replace("pop ", ""))
 
     return combo
 
@@ -164,7 +164,6 @@ def _capitalize(combo):
     capitalization = "\n↓\n".join(str(x).title() for x in items)
     capitalization = capitalization.replace("Fs", "FS").replace("fs", "FS") \
                                     .replace("Bs", "BS").replace("bs", "BS")
-
     return capitalization
 
 def generate_trick(difficulty="random"):
@@ -174,10 +173,10 @@ def generate_trick(difficulty="random"):
     if difficulty == "random":
         difficulty = choice(list(pools))
 
-    combo = choice(pools[difficulty])
-    combo = _resolve_combo(combo, preferences)
-    combo = _format(combo)
-    combo = _apply_aliases(combo)
-    combo = _capitalize(combo)
+    selection = choice(pools[difficulty])
+    resolved = _resolve_combo(selection, preferences)
+    formatted = _format(resolved)
+    aliased = _apply_aliases(formatted, resolved)
+    output = _capitalize(aliased)
 
-    return combo
+    return output
