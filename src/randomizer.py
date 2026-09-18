@@ -75,7 +75,7 @@ def _combo_pools(preferences):
         [stance, direction, spin, "to", grind],
         [stance, lowpop, "late", direction, spin],
         [stance, lowpop, "to", grind, "to", midpop],
-        [stance, lowpop, "to", grind, "to", midpop],
+        [stance, midpop, "to", grind, "to", midpop],
         [stance, pressure, "late", direction, spin],
         [stance, midpop, "to", grind, "to", highpop],
         [stance, lowpop, "to", grind, "to", highpop],

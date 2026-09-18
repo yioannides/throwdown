@@ -7,8 +7,8 @@
 	],
 
 	"direction": [
-		"frontside",
-		"backside"
+		"backside",
+		"frontside"
 	],
 
 	"spin": [
@@ -97,8 +97,8 @@
 		"hardflip late backside 360": "diamond flip",
 		"backside 180 hardflip": "modern ghetto bird",
 		"fakie frontside 360 kickflip": "fs caballerial",
-		"backside 180 bs pop shove-it 360": "bs bigspin",
-		"frontside 180 fs pop shove-it 360": "fs bigspin",
+		"backside 180 bs pop shove-it 360": "bs big spin",
+		"frontside 180 fs pop shove-it 360": "fs big spin",
 		"nollie hardflip late backside 180": "ghetto bird",
 		"backside 180 fs pop shove-it 360": "bs anti spin",
 		"frontside 180 varial flip": "kickflip body varial",
@@ -110,6 +110,8 @@
 		"backside 180 inward heelflip": "bigspin inward heelflip",
 		"fakie frontside 180 laser flip": "fakie bigspin heelflip",
 		"backside 180 fs pop shove-it": "bs pop shove-it body varial",
-		"frontside 180 bs pop shove-it": "fs pop shove-it body varial"
+		"frontside 180 bs pop shove-it": "fs pop shove-it body varial",
+		"backside 180 bs pop shove-it": "bs bigger spin",
+		"frontside 180 fs pop shove-it": "fs bigger spin"
 	}
 }
