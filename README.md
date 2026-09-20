@@ -28,7 +28,7 @@ Originally created as a standalone CLI app (drafted in bash / completed in Pytho
 
 ### features:
 
-- Three levels of difficulty (easy, medium, hard) and random mode
+- Four levels of difficulty (easy, medium, hard, pro) and random mode
 - Type of modules: stance, direction, spin, flip, grind, lateflip & ground tricks
 - Named tricks (example: `Fakie BS 360` -> `Full Cab`)
 
