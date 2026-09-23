@@ -162,8 +162,9 @@ def _apply_aliases(combo, resolved):
 def _capitalize(combo):
     items = combo.split(" to ")
     capitalization = "\n↓\n".join(str(x).title() for x in items)
-    capitalization = capitalization.replace("Fs", "FS").replace("fs", "FS") \
-                                    .replace("Bs", "BS").replace("bs", "BS")
+    for abbreviation in ("FS", "BS"):
+        capitalization = capitalization.replace(abbreviation.title(), abbreviation)
+
     return capitalization
 
 def generate_trick(difficulty="random"):
